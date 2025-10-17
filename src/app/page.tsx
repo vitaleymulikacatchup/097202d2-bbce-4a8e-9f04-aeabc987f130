@@ -1,4 +1,4 @@
-use client";
+"use client";
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavbarLayoutFloatingOverlay from '@/components/navbar/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay';
@@ -35,10 +35,10 @@ export default function Page() {
       <div id="nav" data-section="nav" className="scroll-mt-24">
         <NavbarLayoutFloatingOverlay
           navItems={[
-            { name: "Home", id: "home" },
-            { name: "About Us", id: "about" },
-            { name: "Rooms", id: "rooms" },
-            { name: "Contact", id: "contact" }
+            { label: "Home", href: "#home" },
+            { label: "About Us", href: "#about" },
+            { label: "Rooms", href: "#rooms" },
+            { label: "Contact", href: "#contact" }
           ]}
           brandName="HotelSite"
         />
