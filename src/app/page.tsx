@@ -46,7 +46,7 @@ export default function Page() {
       <div id="hero" data-section="hero" className="scroll-mt-24">
         <div className="mx-auto px-4 md:px-6">
           <HeroBillboard
-            title="Experience Luxury"
+            title="Experience luxury with us"
             description="Discover the ultimate comfort in our exquisite hotel."
             imageSrc={resolvedHeroImage.url}
             imageAlt={resolvedHeroImage.alt}
