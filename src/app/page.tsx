@@ -35,10 +35,10 @@ export default function Page() {
       <div id="nav" data-section="nav" className="scroll-mt-24">
         <NavbarLayoutFloatingOverlay
           navItems={[
-            { label: "Home", href: "#home" },
-            { label: "About Us", href: "#about" },
-            { label: "Rooms", href: "#rooms" },
-            { label: "Contact", href: "#contact" }
+            { name: "Home", id: "home" },
+            { name: "About Us", id: "about" },
+            { name: "Rooms", id: "rooms" },
+            { name: "Contact", id: "contact" }
           ]}
           brandName="HotelSite"
         />
