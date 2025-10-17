@@ -20,11 +20,11 @@ const assetMap = [
 ];
 
 export default function Page() {
-  const resolvedHeroImage = assetMap.find(a => a.id === "hero-image") ?? {};
-  const resolvedContactImage = assetMap.find(a => a.id === "contact-image") ?? {};
-  const resolvedRoom1Image = assetMap.find(a => a.id === "room-image-1") ?? {};
-  const resolvedRoom2Image = assetMap.find(a => a.id === "room-image-2") ?? {};
-  const resolvedRoom3Image = assetMap.find(a => a.id === "room-image-3") ?? {};
+  const resolvedHeroImage = assetMap.find(a => a.id === "hero-image") ?? { url: "/public/images/placeholder.webp", alt: "Decorative image" };
+  const resolvedContactImage = assetMap.find(a => a.id === "contact-image") ?? { url: "/public/images/placeholder.webp", alt: "Decorative image" };
+  const resolvedRoom1Image = assetMap.find(a => a.id === "room-image-1") ?? { url: "/public/images/placeholder.webp", alt: "Decorative image" };
+  const resolvedRoom2Image = assetMap.find(a => a.id === "room-image-2") ?? { url: "/public/images/placeholder.webp", alt: "Decorative image" };
+  const resolvedRoom3Image = assetMap.find(a => a.id === "room-image-3") ?? { url: "/public/images/placeholder.webp", alt: "Decorative image" };
 
   return (
     <ThemeProvider
@@ -35,9 +35,9 @@ export default function Page() {
       <div id="nav" data-section="nav" className="scroll-mt-24">
         <NavbarLayoutFloatingOverlay
           navItems={[
-            { name: "Home", id: "home" },
+            { name: "Home", id: "hero" },
             { name: "About Us", id: "about" },
-            { name: "Rooms", id: "rooms" },
+            { name: "Rooms", id: "product" },
             { name: "Contact", id: "contact" }
           ]}
           brandName="HotelSite"
@@ -48,8 +48,8 @@ export default function Page() {
           <HeroBillboard
             title="Experience Luxury"
             description="Discover the ultimate comfort in our exquisite hotel."
-            imageSrc={resolvedHeroImage.url || "/public/images/placeholder.webp"}
-            imageAlt={resolvedHeroImage.alt || "Decorative image"}
+            imageSrc={resolvedHeroImage.url}
+            imageAlt={resolvedHeroImage.alt}
             buttons={[
               { text: "Explore Rooms", href: "rooms" }
             ]}
@@ -75,9 +75,9 @@ export default function Page() {
           <ProductCardTwo
             title="Our Rooms"
             products={[
-              { id: "1", brand: "Hotel Grand", name: "Luxury Suite", price: "$250/night", rating: 5, reviewCount: "1.5k", imageSrc: resolvedRoom1Image.url || "/public/images/placeholder.webp", imageAlt: resolvedRoom1Image.alt || "Decorative image" },
-              { id: "2", brand: "Hotel Grand", name: "Deluxe Room", price: "$180/night", rating: 4, reviewCount: "1.2k", imageSrc: resolvedRoom2Image.url || "/public/images/placeholder.webp", imageAlt: resolvedRoom2Image.alt || "Decorative image" },
-              { id: "3", brand: "Hotel Grand", name: "Standard Room", price: "$120/night", rating: 4, reviewCount: "900", imageSrc: resolvedRoom3Image.url || "/public/images/placeholder.webp", imageAlt: resolvedRoom3Image.alt || "Decorative image" }
+              { id: "1", brand: "Hotel Grand", name: "Luxury Suite", price: "$250/night", rating: 5, reviewCount: "1.5k", imageSrc: resolvedRoom1Image.url, imageAlt: resolvedRoom1Image.alt },
+              { id: "2", brand: "Hotel Grand", name: "Deluxe Room", price: "$180/night", rating: 4, reviewCount: "1.2k", imageSrc: resolvedRoom2Image.url, imageAlt: resolvedRoom2Image.alt },
+              { id: "3", brand: "Hotel Grand", name: "Standard Room", price: "$120/night", rating: 4, reviewCount: "900", imageSrc: resolvedRoom3Image.url, imageAlt: resolvedRoom3Image.alt }
             ]}
           />
         </div>
@@ -103,8 +103,8 @@ export default function Page() {
               { name: "email", type: "email", placeholder: "Email", required: true }
             ]}
             textarea={{ name: "message", placeholder: "Type your message...", rows: 5, required: true }}
-            imageSrc={resolvedContactImage.url || "/public/images/placeholder.webp"}
-            imageAlt={resolvedContactImage.alt || "Decorative image"}
+            imageSrc={resolvedContactImage.url}
+            imageAlt={resolvedContactImage.alt}
           />
         </div>
       </div>
